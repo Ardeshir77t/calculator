@@ -1,11 +1,17 @@
 const input = document.querySelector(`.input-box`);
-//input.setAttribute(`readOnly`, `true`);
 
 let calculation = [];
 
+getData();
+function getData() {
+  calculation = JSON.parse(localStorage.getItem(`data1`));
+}
+function saveData() {
+  localStorage.setItem(`data1`, JSON.stringify(calculation));
+}
 input.value = calculation;
 //console.log(input);
-console.log(calculation);
+
 function calculate(numbers) {
   if (
     (numbers === `-` && calculation.length === 0) ||
@@ -48,6 +54,7 @@ function calculate(numbers) {
       console.log(calculation === true);
       input.value = calculation;
       console.log(typeof calculation);
+      saveData();
     } else if (
       numbers === `+` ||
       numbers === `-` ||
@@ -57,19 +64,27 @@ function calculate(numbers) {
       calculation = calculation + numbers;
       input.value = calculation;
       console.log(calculation);
+      saveData();
     } else if (numbers === `=`) {
       calculation = eval(calculation);
       input.value = calculation;
       console.log(calculation);
+      saveData();
     } else if (numbers === `reset`) {
       input.value = "";
       calculation = "";
       console.log(calculation);
+      saveData();
     } else if (numbers === `pow2`) {
       calculation = Math.pow(calculation, 2);
       input.value = calculation;
       console.log(typeof calculation);
       console.log(calculation);
+      saveData();
+    } else if (numbers === `c`) {
+      input.value = "";
+      calculation = "";
+      saveData();
     }
   }
 }
