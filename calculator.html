@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculator</title>
+    <meta charset="viewport" />
+    <meta width="device-width ,initial-scale=1.0" />
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="input-div">
+        <input
+          type="text"
+          value="text"
+          placeholder="write a number"
+          class="input-box"
+        />
+        <button class="reset-button" onclick="calculate(`reset`)">reset</button>
+      </div>
+      <div class="calculating-div">
+        <button onclick="calculate(1)">1</button>
+        <button onclick="calculate(2)">2</button>
+        <button onclick="calculate(3)">3</button>
+        <button onclick="calculate(`+`)">+</button>
+        <button onclick="calculate(4)">4</button>
+        <button onclick="calculate(5)">5</button>
+        <button onclick="calculate(6)">6</button>
+        <button onclick="calculate(`-`)">-</button>
+        <button onclick="calculate(7)">7</button>
+        <button onclick="calculate(8)">8</button>
+        <button onclick="calculate(9)">9</button>
+        <button onclick="calculate(`*`)">*</button>
+        <button onclick="calculate(`.`)">.</button>
+        <button onclick="calculate(0)">0</button>
+        <button onclick="calculate(`pow2`)">power2</button>
+        <button onclick="calculate(`=`)">=</button>
+      </div>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
